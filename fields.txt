@@ -1,0 +1,30 @@
+data['@id'] - nicht wichtig für ML
+data['title'] - nicht wichtig für ML
+data['URL']
+data['address']['city']
+data['address']['postcode']
+data['address']['quarter'] - Bezirk
+data['address']['street']
+data['address']['wgs84Coordinate']['latitude']
+data['address']['wgs84Coordinate']['longitude']
+data['balcony'] - t/f
+data['buildInKitchen'] - t/f
+data['energyEfficiencyClass'] - ein Buchstabe
+data['cellar'] - t/f
+data['garden'] - t/f
+data['guesttoilet'] - t/f
+data['lift'] - t/f
+data['livingSpace']
+data['numberOfRooms']
+data['price']['value'] - netto Miete
+data['calculatedPrice']['value'] - alle Kosten, Miete Warm
+
+
+
+
+
+
+
+
+
+
