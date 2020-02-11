@@ -18,3 +18,6 @@ The URL should contain the needed filter criteria. Please go to www.immobiliensc
 
 # Saving of Data
 The scraped data will be saved into a SQLite Database "real-estate.db".
+
+# Thanks to
+Initial development was copied from https://github.com/asmaier/ImmoSpider
