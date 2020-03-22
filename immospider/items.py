@@ -24,6 +24,7 @@ class ImmoscoutItem(scrapy.Item):
     lat = scrapy.Field()
     lng = scrapy.Field()
     balcony = scrapy.Field()
+    realtorCompanyName = scrapy.Field()
     builtInKitchen = scrapy.Field()
     energyEfficiencyClass = scrapy.Field()
     cellar = scrapy.Field()

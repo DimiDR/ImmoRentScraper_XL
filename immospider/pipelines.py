@@ -57,6 +57,7 @@ class SQlitePipeline(object):
                     street TEXT,
                     lat REAL,
                     lng REAL,
+                    realtorCompanyName TEXT,
                     balcony TEXT,
                     builtInKitchen TEXT,
                     energyEfficiencyClass TEXT,
@@ -107,6 +108,7 @@ class SQlitePipeline(object):
                 street, 
                 lat, 
                 lng,
+                realtorCompanyName,
                 balcony, 
                 builtInKitchen, 
                 energyEfficiencyClass, 
@@ -139,7 +141,7 @@ class SQlitePipeline(object):
                         ?,?,?,?,?,
                         ?,?,?,?,?,
                         ?,?,?,?,?,
-                        ?,?)
+                        ?,?,?)
                 ''', (
                     item['immo_id'],
                     item['year'],
@@ -153,6 +155,7 @@ class SQlitePipeline(object):
                     item['street'],
                     item['lat'],
                     item['lng'],
+                    item['realtorCompanyName'],
                     item['balcony'],
                     item['builtInKitchen'],
                     item['energyEfficiencyClass'],

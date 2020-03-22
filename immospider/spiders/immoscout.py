@@ -70,6 +70,10 @@ class ImmoscoutSpider(scrapy.Spider):
                         item['lat'] = "0.0"
                         item['lng'] = "0.0"
                     #Additions
+                    if "realtorCompanyName" in data:
+                        item["realtorCompanyName"] = data["realtorCompanyName"]
+                    else:
+                        item["realtorCompanyName"] = ""
                     if "balcony" in data:
                         item["balcony"] = data["balcony"]
                     else:
