@@ -45,7 +45,7 @@ class SQlitePipeline(object):
         try:
             self.c.execute('''
                 CREATE TABLE IF NOT EXISTS immoscout(
-                    immo_id INTEGER NOT NULL PRIMARY KEY,
+                    immo_id INTEGER,
                     year TEXT,
                     month TEXT,
                     day TEXT,
@@ -82,7 +82,9 @@ class SQlitePipeline(object):
                     notary REAL,
                     notary_percent REAL,
                     entry_land REAL,
-                    entry_land_percent REAL
+                    entry_land_percent REAL,
+                    rent REAL,
+                    PRIMARY KEY (immo_id, year)
                 )
             ''')
             self.connection.commit()
@@ -133,7 +135,8 @@ class SQlitePipeline(object):
                 notary,
                 notary_percent,
                 entry_land,
-                entry_land_percent
+                entry_land_percent,
+                rent
                 ) VALUES(?,?,?,?,?,
                         ?,?,?,?,?,
                         ?,?,?,?,?,
@@ -141,7 +144,7 @@ class SQlitePipeline(object):
                         ?,?,?,?,?,
                         ?,?,?,?,?,
                         ?,?,?,?,?,
-                        ?,?,?)
+                        ?,?,?,?)
                 ''', (
                     item['immo_id'],
                     item['year'],
@@ -181,6 +184,7 @@ class SQlitePipeline(object):
                     item['notary_percent'],
                     item['entry_land'],
                     item['entry_land_percent'],
+                    item['rent'],
         ))
         self.connection.commit()
         return item

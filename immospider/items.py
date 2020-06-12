@@ -50,5 +50,6 @@ class ImmoscoutItem(scrapy.Item):
     notary_percent = scrapy.Field()
     entry_land = scrapy.Field()
     entry_land_percent = scrapy.Field()
+    rent = scrapy.Field()
 
 

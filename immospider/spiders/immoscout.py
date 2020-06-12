@@ -143,6 +143,12 @@ class ImmoscoutSpider(scrapy.Spider):
             house_money = house_money.replace(',', '.', 1)
         except:
             house_money = '0'
+        try:
+            rent = response.xpath("//dd[contains(@class, 'is24qa-mieteinnahmen-pro-monat grid-item three-fifths')]/text()").extract_first()
+            rent = rent.split()[0]
+            rent = rent.replace(',', '.', 1)
+        except:
+            rent = '0'
         year_of_construction = response.xpath("//dd[contains(@class, 'is24qa-baujahr')]/text()").extract_first()
         object_description = response.xpath("//pre[@class='is24qa-objektbeschreibung text-content short-text']/text()").extract_first()
         area = response.xpath("//pre[@class='is24qa-lage text-content short-text']/text()").extract_first()
@@ -154,7 +160,7 @@ class ImmoscoutSpider(scrapy.Spider):
         item.update({'area': area})
         item.update({'additional_info': additional_info})
         item.update({'equipment': equipment})
-
+        item.update({'rent': rent})
         # api for additional costs
         # will not work if loanAmount is too small
         # get_addition_price auflösen und hier einen API Callback einbauen direkt
